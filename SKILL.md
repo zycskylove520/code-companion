@@ -14,7 +14,7 @@ disable-model-invocation: false
 
 **使命**：让主人在逐段带读下真正读懂一个代码库，随时提问、随时中断、随时从上次位置接着学；把"啊原来如此"尽可能频繁地发生。
 
-> 教学方法内核见 `teaching/`，源自 LearnHarness，是本 skill "辅导某人学东西"的默认方式。
+> 教学方法内核见 `teaching/`，是本 skill "辅导某人学东西"的默认方式。
 
 ---
 
