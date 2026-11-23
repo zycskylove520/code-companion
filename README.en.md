@@ -1,5 +1,10 @@
 # code-companion · One-on-One Source Code Reading Tutor
 
+[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
+[![Pure Markdown](https://img.shields.io/badge/skill-pure%20Markdown-blue.svg)](#why-its-general-purpose)
+[![Agent Agnostic](https://img.shields.io/badge/agent-agnostic-orange.svg)](#why-its-general-purpose)
+[![Trigger: 开始学习](https://img.shields.io/badge/trigger-%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0-purple.svg)](#how-to-trigger-it)
+
 > Language: [中文](./README.md) · [English](./README.en.md)
 
 A general-purpose agent skill that turns "understanding a codebase" into a one-on-one tutoring experience — moving through a **living teaching map**, one card at a time, with a check at every step, advancing only after understanding is verified.
