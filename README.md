@@ -1,6 +1,10 @@
 # code-companion · 一对一源码精读带读老师
 
-一个用于 [DeepSeek Harness（DSH）](https://github.com/deepseek-ai/deepseek-harness) 的 skill：把「读懂一个代码库」变成一位一对一老师带着你逐段精读的过程——按一张**会移动的教学地图**推进，一次一张卡、一步一测、验证掌握才往前走。
+> 语言：[中文](./README.md) · [English](./README.en.md)
+
+一个通用的 agent skill：把「读懂一个代码库」变成一位一对一老师带着你逐段精读的过程——按一张**会移动的教学地图**推进，一次一张卡、一步一测、验证掌握才往前走。
+
+**不绑定任何 agent 软件。** 它是一组纯 Markdown 指令，不调用任何专有工具或私有 API——任何能加载 skill / 指令目录的 agent（Claude Code、Cursor、Cline、以及各类自研 agent 框架等）都能使用。
 
 目标不是让你复述「这段在讲什么」，而是让你**真的理解**：每个结论都能从你已经接受的地基推出来，接进你自己的心智模型。
 
@@ -40,23 +44,35 @@
 
 学习数据写在项目根的 `.learning_memory/`（隐藏目录），**不碰源码**。
 
+## 为什么通用
+
+- 全部内容是 Markdown 文本，没有代码、没有构建步骤、没有平台专有 API。
+- 「读文件、核实行号、写学习目录」这些动作都通过 agent 已有的通用文件工具完成，skill 只描述规则与流程。
+- 状态存在项目目录的普通文件里（`.learning_memory/`），不依赖任何平台的会话存储。
+- 入口文件是 `SKILL.md`，内含 `name` / `description` 的 YAML frontmatter——这是目前多数 agent 的通用约定。
+
 ## 安装
 
-把本目录放到 DSH 的 skills 目录下即可：
+这个 skill 就是一个目录，没有运行时依赖。把它放到你的 agent 软件加载 skill 的位置即可。
+
+**通用做法**：把整个 `code-companion/` 目录复制到 agent 的 skills 目录，重启会话（或触发技能重载），然后说「开始学习」。
+
+常见 agent 的 skills 目录（以各软件实际版本为准）：
+
+| Agent | 常见位置 |
+|---|---|
+| Claude Code | `~/.claude/skills/` 或项目的 `.claude/skills/` |
+| Cline / Roo Code | 项目根目录的自定义指令目录（如 `.clinerules/`） |
+| 其他支持 skill 的 agent | 该软件的 skills / 指令目录 |
+
+> 不同 agent 对 skill 入口的约定不同：有的读 `SKILL.md` + frontmatter，有的用别的文件名或格式。本 skill 的入口是 `SKILL.md`；如果你的 agent 用别的约定，只需按它的要求指定入口文件，五环内容无需改动。
+
+从仓库安装：
 
 ```bash
-# 仓库克隆到临时位置
 git clone https://github.com/zycskylove520/code-companion.git
-
-# 复制到 DSH 的 skills 目录
-# Windows（PowerShell）：
-Copy-Item -Recurse .\code-companion "$env:USERPROFILE\.dsh\skills\code-companion"
-
-# macOS / Linux：
-cp -r ./code-companion ~/.dsh/skills/code-companion
+# 然后把 code-companion/ 整个目录复制到你的 agent 的 skills 目录
 ```
-
-放好后重启会话（或触发技能重载），说「开始学习」即可。
 
 ## 目录结构
 
@@ -64,6 +80,8 @@ cp -r ./code-companion ~/.dsh/skills/code-companion
 code-companion/
 ├── SKILL.md              # 薄入口：状态路由、硬红线
 ├── CHANGELOG.md          # 演进记录
+├── README.md             # 中文文档（默认）
+├── README.en.md          # 英文文档
 ├── engine/               # 状态机怎么转
 │   ├── INDEX.md
 │   ├── session.md        # 进门分流（首次建课 / 续学）
