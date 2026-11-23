@@ -1,5 +1,10 @@
 # code-companion · 一对一源码精读带读老师
 
+[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
+[![Pure Markdown](https://img.shields.io/badge/skill-pure%20Markdown-blue.svg)](#为什么通用)
+[![Agent Agnostic](https://img.shields.io/badge/agent-agnostic-orange.svg)](#为什么通用)
+[![Trigger: 开始学习](https://img.shields.io/badge/trigger-%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0-purple.svg)](#触发方式)
+
 > 语言：[中文](./README.md) · [English](./README.en.md)
 
 一个通用的 agent skill：把「读懂一个代码库」变成一位一对一老师带着你逐段精读的过程——按一张**会移动的教学地图**推进，一次一张卡、一步一测、验证掌握才往前走。
