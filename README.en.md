@@ -46,6 +46,7 @@ Key mechanisms:
 - **A single active task card** written as `当前任务卡.md` (literally "current task card") — deleting a session doesn't lose your place; it can be resent verbatim.
 - **A permanent archive** at `card-archive/C<n>.md`: created on first card, knowledge fragments adjusted in place after each answer, revision versions kept after re-teaching, checked and completed when done — append-only, never cleaned, achieving "never forget".
 - **Mastery is not inferred from verbal signals**: "done / OK / I get it" is not verification; record a self-test, a paraphrase, or observed evidence.
+- **Capability boundary is documented and kept current**: after the first-lesson boundary probe, write `能力边界.md` (a living portrait of what the learner can currently do — each strand's floor / ceiling / misconceptions, with dates). Every answer, re-teaching, and verified advance updates it; it always reflects "what the learner can do and where they're stuck now", never a one-time snapshot.
 
 Learning data is written to `.learning_memory/` (a hidden directory) at the project root — **source code is never modified**.
 
@@ -97,7 +98,8 @@ code-companion/
 │   ├── INDEX.md
 │   ├── build.md          # boundary probing, minimal-tree planning, week/day units
 │   ├── evolve.md         # map evolving with the learner, never forget
-│   └── progress.md       # progress source of truth template, dynamic estimation
+│   ├── progress.md       # progress source of truth template, dynamic estimation
+│   └── capability.md     # 能力边界.md template, creation timing, ongoing maintenance
 ├── teaching/             # how to present a card
 │   ├── INDEX.md
 │   ├── principles.md     # teaching principles (foundations first, etc.)
